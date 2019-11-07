@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>511B6425-F6D5-462F-B9A6-B21F4A438092</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WhemAmI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6D732597A0EEC1323F89031840CEFFB63E2C22CF</key>
+		<string>https://github.com/rshankras/WhemAmI.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WhemAmI.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6D732597A0EEC1323F89031840CEFFB63E2C22CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rshankras/WhemAmI.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6D732597A0EEC1323F89031840CEFFB63E2C22CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6D732597A0EEC1323F89031840CEFFB63E2C22CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WhemAmI</string>
+		</dict>
+	</array>
+</dict>
+</plist>
