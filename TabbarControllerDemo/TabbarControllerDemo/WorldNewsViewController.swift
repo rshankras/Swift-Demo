@@ -7,36 +7,31 @@
 //
 
 import UIKit
+import WebKit
 
-class WorldNewsViewController: UIViewController, UIWebViewDelegate {
+class WorldNewsViewController: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet var webView: UIWebView!
+    @IBOutlet var webView: WKWebView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(true)
         
-        let url = URL(string: "http://edition.cnn.com/world")
+        let url = URL(string: "https://www.bbc.com/news/world")
         let urlRequest = URLRequest(url: url!)
-        webView.loadRequest(urlRequest)
+        webView.load(urlRequest)
         
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        webView.navigationDelegate = self
     }
     
-    //MARK:- UIWebView Delegate methods
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
     }
 }

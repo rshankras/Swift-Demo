@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
-class SportsViewController: UIViewController, UIWebViewDelegate {
+class SportsViewController: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet var webView: UIWebView!
+    @IBOutlet var webView: WKWebView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
@@ -20,21 +21,16 @@ class SportsViewController: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let url = URL(string: "http://edition.cnn.com/sport")
+        let url = URL(string: "https://www.bbc.com/sport")
         let urlRequest = URLRequest(url: url!)
-        webView.loadRequest(urlRequest)
+        webView.load(urlRequest)
         
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        webView.navigationDelegate = self
     }
     
-    //MARK:- UIWebView Delegate methods
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
     }
 

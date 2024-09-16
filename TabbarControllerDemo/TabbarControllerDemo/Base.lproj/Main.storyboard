@@ -1,96 +1,130 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2pX-bS-qtq">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="CQt-ag-ch6">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--World News-->
-        <scene sceneID="fea-nL-5WN">
+        <!--Sports-->
+        <scene sceneID="1k5-uT-4bT">
             <objects>
-                <viewController storyboardIdentifier="WorldNewsViewController" id="PcO-Xm-3Uf" customClass="WorldNewsViewController" customModule="TabbarControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aGL-eb-HXd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <viewController storyboardIdentifier="SportsViewController" id="bNJ-4y-fMq" customClass="SportsViewController" customModule="TabbarControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xcz-cg-54c"/>
+                        <viewControllerLayoutGuide type="bottom" id="C1x-i3-Wsd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WG5-jp-5KY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="hjS-Dl-iWs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="Bq5-xm-Dno">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbG-UG-xg1">
+                                <rect key="frame" x="16" y="59" width="361" height="710"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="HpI-y9-PlB">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HpI-y9-PlB" firstAttribute="centerY" secondItem="WG5-jp-5KY" secondAttribute="centerY" id="XS2-fV-d6z"/>
+                            <constraint firstItem="dbG-UG-xg1" firstAttribute="leading" secondItem="WG5-jp-5KY" secondAttribute="leadingMargin" id="eDE-0X-gOP"/>
+                            <constraint firstItem="HpI-y9-PlB" firstAttribute="centerX" secondItem="WG5-jp-5KY" secondAttribute="centerX" id="ePR-wk-NDx"/>
+                            <constraint firstItem="dbG-UG-xg1" firstAttribute="top" secondItem="xcz-cg-54c" secondAttribute="bottom" id="f1h-mu-nre"/>
+                            <constraint firstItem="C1x-i3-Wsd" firstAttribute="top" secondItem="dbG-UG-xg1" secondAttribute="bottom" id="uuJ-5Z-Gb4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dbG-UG-xg1" secondAttribute="trailing" id="vdD-R6-zKI"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="World News" image="world.png" id="ws2-Fo-skA"/>
+                    <tabBarItem key="tabBarItem" title="Sports" id="i3S-7f-Hut">
+                        <imageReference key="image" image="basketball.png" symbolScale="medium"/>
+                    </tabBarItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="Bq5-xm-Dno" id="ixF-HZ-b78"/>
-                        <outlet property="webView" destination="hjS-Dl-iWs" id="B5j-gO-v9r"/>
+                        <outlet property="activityIndicator" destination="HpI-y9-PlB" id="5RD-7t-Mdw"/>
+                        <outlet property="webView" destination="dbG-UG-xg1" id="Jnr-dq-vWN"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nLe-rb-j6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3a-bt-Ipt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="229"/>
+            <point key="canvasLocation" x="-353" y="-584"/>
         </scene>
-        <!--Sports-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--News-->
+        <scene sceneID="fdV-Ct-j2e">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SportsViewController" customModule="TabbarControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <viewController storyboardIdentifier="WorldNewsViewController" id="6im-Ug-yPc" customClass="WorldNewsViewController" customModule="TabbarControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ohI-LS-8s8"/>
+                        <viewControllerLayoutGuide type="bottom" id="FSl-Qe-Tqf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ER2-Rc-dGe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="mGa-uH-S03">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="bK1-dm-4ma">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tr0-08-PSc">
+                                <rect key="frame" x="16" y="59" width="361" height="710"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OvD-xn-4tu">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OvD-xn-4tu" firstAttribute="centerY" secondItem="ER2-Rc-dGe" secondAttribute="centerY" id="BvB-VR-xo0"/>
+                            <constraint firstItem="Tr0-08-PSc" firstAttribute="leading" secondItem="ER2-Rc-dGe" secondAttribute="leadingMargin" id="bCc-nT-cmy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tr0-08-PSc" secondAttribute="trailing" id="hNk-xv-4IB"/>
+                            <constraint firstItem="FSl-Qe-Tqf" firstAttribute="top" secondItem="Tr0-08-PSc" secondAttribute="bottom" id="pHA-Ua-XxG"/>
+                            <constraint firstItem="Tr0-08-PSc" firstAttribute="top" secondItem="ohI-LS-8s8" secondAttribute="bottom" id="yp7-1r-xXF"/>
+                            <constraint firstItem="OvD-xn-4tu" firstAttribute="centerX" secondItem="ER2-Rc-dGe" secondAttribute="centerX" id="zfc-Y4-rMP"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sports" image="basketball.png" id="KeO-hP-SvE"/>
+                    <tabBarItem key="tabBarItem" title="News" id="5jt-pA-MLe">
+                        <imageReference key="image" image="world.png" symbolScale="medium"/>
+                    </tabBarItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="bK1-dm-4ma" id="5Be-Zs-ebZ"/>
-                        <outlet property="webView" destination="mGa-uH-S03" id="t3H-4T-XmB"/>
+                        <outlet property="activityIndicator" destination="OvD-xn-4tu" id="CW8-59-df1"/>
+                        <outlet property="webView" destination="Tr0-08-PSc" id="AsV-35-SoO"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgZ-r1-mEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="910"/>
+            <point key="canvasLocation" x="-390" y="82"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="Osu-bG-CJa">
+        <scene sceneID="AUa-Rd-lcO">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2pX-bS-qtq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Chc-BE-VeP">
+                <tabBarController id="CQt-ag-ch6" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ilr-gb-yfb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="PcO-Xm-3Uf" kind="relationship" relationship="viewControllers" id="Q2c-ps-r8w"/>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="Hys-cg-SyL"/>
+                        <segue destination="6im-Ug-yPc" kind="relationship" relationship="viewControllers" id="ksq-AW-Zey"/>
+                        <segue destination="bNJ-4y-fMq" kind="relationship" relationship="viewControllers" id="L2W-V5-lAX"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tUo-Ot-0Wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L48-lB-SJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="307"/>
+            <point key="canvasLocation" x="-1161" y="-408"/>
         </scene>
     </scenes>
     <resources>
         <image name="basketball.png" width="29" height="29"/>
-        <image name="world.png" width="28" height="27"/>
+        <image name="world.png" width="28" height="27.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
