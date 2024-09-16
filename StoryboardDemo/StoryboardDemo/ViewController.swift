@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier  ==   "detail"   {
-            let  childViewController  =  segue.destination  as! SecondViewController
-            childViewController.studentName  =  nameTextField.text
+            let  childViewController  =  segue.destination  as? SecondViewController
+            childViewController?.studentName  =  nameTextField.text
         }
     }
     
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
         if segue.source .isKind(of: SecondViewController.self) {
-            let controller = segue.source as! SecondViewController
-            print(controller.message ?? "")
+            let controller = segue.source as? SecondViewController
+            print(controller?.message ?? "")
         }
     }
 }
